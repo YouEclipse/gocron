@@ -2,7 +2,7 @@ package notify
 
 import (
     "time"
-    "github.com/ouqiang/gocron/modules/logger"
+    "gocron/modules/logger"
     "fmt"
 )
 

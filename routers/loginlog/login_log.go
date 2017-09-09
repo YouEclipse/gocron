@@ -4,9 +4,9 @@ import (
     "gopkg.in/macaron.v1"
     "github.com/Unknwon/paginater"
     "fmt"
-    "github.com/ouqiang/gocron/modules/logger"
-    "github.com/ouqiang/gocron/models"
-    "github.com/ouqiang/gocron/routers/base"
+    "gocron/modules/logger"
+    "gocron/models"
+    "gocron/routers/base"
     "html/template"
 )
 

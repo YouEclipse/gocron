@@ -2,10 +2,10 @@ package user
 
 import (
     "gopkg.in/macaron.v1"
-    "github.com/ouqiang/gocron/modules/utils"
-    "github.com/ouqiang/gocron/models"
+    "gocron/modules/utils"
+    "gocron/models"
     "github.com/go-macaron/session"
-    "github.com/ouqiang/gocron/modules/logger"
+    "gocron/modules/logger"
     "github.com/go-macaron/captcha"
 )
 

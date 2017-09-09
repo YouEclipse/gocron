@@ -4,13 +4,13 @@ package tasklog
 
 import (
     "gopkg.in/macaron.v1"
-    "github.com/ouqiang/gocron/models"
-    "github.com/ouqiang/gocron/modules/logger"
-    "github.com/ouqiang/gocron/modules/utils"
+    "gocron/models"
+    "gocron/modules/logger"
+    "gocron/modules/utils"
     "github.com/Unknwon/paginater"
     "fmt"
     "html/template"
-    "github.com/ouqiang/gocron/routers/base"
+    "gocron/routers/base"
 )
 
 func Index(ctx *macaron.Context)  {

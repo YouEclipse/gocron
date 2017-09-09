@@ -2,7 +2,7 @@ package utils
 
 import (
     "encoding/json"
-    "github.com/ouqiang/gocron/modules/logger"
+    "gocron/modules/logger"
 )
 
 // json 格式输出

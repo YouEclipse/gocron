@@ -3,11 +3,11 @@ package notify
 
 import (
     "fmt"
-    "github.com/ouqiang/gocron/modules/httpclient"
-    "github.com/ouqiang/gocron/modules/logger"
-    "github.com/ouqiang/gocron/modules/utils"
+    "gocron/modules/httpclient"
+    "gocron/modules/logger"
+    "gocron/modules/utils"
     "strings"
-    "github.com/ouqiang/gocron/models"
+    "gocron/models"
     "strconv"
     "time"
 )

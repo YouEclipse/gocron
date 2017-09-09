@@ -2,7 +2,7 @@ package base
 
 import (
     "gopkg.in/macaron.v1"
-    "github.com/ouqiang/gocron/models"
+    "gocron/models"
 )
 
 func ParsePageAndPageSize(ctx *macaron.Context, params models.CommonMap)  {

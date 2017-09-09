@@ -2,16 +2,16 @@ package task
 
 import (
     "gopkg.in/macaron.v1"
-    "github.com/ouqiang/gocron/models"
-    "github.com/ouqiang/gocron/modules/logger"
-    "github.com/ouqiang/gocron/modules/utils"
-    "github.com/ouqiang/gocron/service"
+    "gocron/models"
+    "gocron/modules/logger"
+    "gocron/modules/utils"
+    "gocron/service"
     "strconv"
     "github.com/jakecoffman/cron"
     "github.com/Unknwon/paginater"
     "fmt"
     "html/template"
-    "github.com/ouqiang/gocron/routers/base"
+    "gocron/routers/base"
     "github.com/go-macaron/binding"
     "strings"
 )

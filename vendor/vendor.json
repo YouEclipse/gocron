@@ -155,6 +155,144 @@
 			"revisionTime": "2016-03-02T07:53:16Z"
 		},
 		{
+			"checksumSHA1": "6Nz0/PgBb0HRYACabOC5/qAhwc0=",
+			"path": "gocron/cmd",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "lunLaof3xsLUuebajpei67NqTbo=",
+			"path": "gocron/models",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "7OVIgimAUIoOOVi72BwCBbDHNWw=",
+			"path": "gocron/modules/app",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "SZnVkqtW4jpg1xHz55CmN2IF6e8=",
+			"path": "gocron/modules/httpclient",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "OFCbx7pkjc4aR9JH4hsVu2qGLtU=",
+			"path": "gocron/modules/logger",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "IJ361/lvD+KZjkQCuOqsuVQRiPo=",
+			"path": "gocron/modules/notify",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "jN0VfpTHES74IAbbeMjlbu1VRBg=",
+			"path": "gocron/modules/rpc/auth",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "FyPiPJaYhSE6xuezSNWLhDqnvvc=",
+			"path": "gocron/modules/rpc/client",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "GQ9OIPph7y8LZxi/uEdtcYxs2Ho=",
+			"path": "gocron/modules/rpc/grpcpool",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "WvN+IhqIdR+uwmv22BG5ZKHDj2c=",
+			"path": "gocron/modules/rpc/proto",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "Wncq6bvdDqYBGU9MIGaz6hwtpDw=",
+			"path": "gocron/modules/rpc/server",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "IZWmqcnsWZA4eniINecOTrN3gYI=",
+			"path": "gocron/modules/setting",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "AOi6FDg4q6c5OOMvQRbu2NRk+VI=",
+			"path": "gocron/modules/utils",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "kmelOjO276FnZcFRCaBFEoaVc0M=",
+			"path": "gocron/routers",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "M2gl6uBPm+Lg+fOJBkQqiN/QsrU=",
+			"path": "gocron/routers/base",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "zggcQVZkq9Em/eIa+68NfRamy/Q=",
+			"path": "gocron/routers/host",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "yseGepOv0P8k9rjGtx0yWaCnGaU=",
+			"path": "gocron/routers/install",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "iWSkP8T/K7baL7loo1Xv6rYbF0A=",
+			"path": "gocron/routers/loginlog",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "ZNpKdFU8qFO1HeDc8WnPC8d9bb0=",
+			"path": "gocron/routers/manage",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "HRYrsjFWm1vd6V/hpel/fd++Y20=",
+			"path": "gocron/routers/task",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "XwdmV36vUZ+YACKsdRMAd0/33xI=",
+			"path": "gocron/routers/tasklog",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "dngzSjuTlzdYK19DuSZ6JzPH4qk=",
+			"path": "gocron/routers/user",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
+			"checksumSHA1": "Fq3wW5Cl5caLyyWx+Q8s403ciOs=",
+			"path": "gocron/service",
+			"revision": "21028ec6f06516c9f0eccceb5be53e48a4c9a310",
+			"revisionTime": "2017-09-08T01:04:04Z"
+		},
+		{
 			"checksumSHA1": "cVGA2CJTJsCAVa5VKTM8k/ma/BU=",
 			"path": "github.com/silenceper/pool",
 			"revision": "e4c4536403d9765c8ea74cda2ee49dcb0848bc7a",
@@ -207,6 +345,12 @@
 			"checksumSHA1": "9EZG3s2eOREO7WkBvigjk57wK/8=",
 			"path": "golang.org/x/net/trace",
 			"revision": ""
+		},
+		{
+			"checksumSHA1": "fwb6FNBUs0SOyUpUx5R31Xf22GY=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "d8f5ea21b9295e315e612b4bcf4bedea93454d4d",
+			"revisionTime": "2017-08-03T09:04:06Z"
 		},
 		{
 			"checksumSHA1": "faFDXp++cLjLBlvsr+izZ+go1WU=",
@@ -336,5 +480,5 @@
 			"revision": ""
 		}
 	],
-	"rootPath": "github.com/ouqiang/gocron"
+	"rootPath": "gocron"
 }

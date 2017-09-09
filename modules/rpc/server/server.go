@@ -5,9 +5,9 @@ import (
     "net"
     "google.golang.org/grpc/grpclog"
     "google.golang.org/grpc"
-    pb "github.com/ouqiang/gocron/modules/rpc/proto"
-    "github.com/ouqiang/gocron/modules/utils"
-    "github.com/ouqiang/gocron/modules/rpc/auth"
+    pb "gocron/modules/rpc/proto"
+    "gocron/modules/utils"
+    "gocron/modules/rpc/auth"
     "google.golang.org/grpc/credentials"
 )
 

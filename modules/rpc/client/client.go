@@ -1,15 +1,15 @@
 package client
 
 import (
-    pb "github.com/ouqiang/gocron/modules/rpc/proto"
+    pb "gocron/modules/rpc/proto"
     "golang.org/x/net/context"
     "fmt"
     "time"
     "errors"
-    "github.com/ouqiang/gocron/modules/rpc/grpcpool"
+    "gocron/modules/rpc/grpcpool"
     "google.golang.org/grpc/codes"
     "google.golang.org/grpc"
-    "github.com/ouqiang/gocron/modules/logger"
+    "gocron/modules/logger"
 )
 
 var (

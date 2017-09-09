@@ -3,7 +3,7 @@ package models
 import (
     "errors"
     "fmt"
-    "github.com/ouqiang/gocron/modules/logger"
+    "gocron/modules/logger"
     "github.com/go-xorm/xorm"
     "strconv"
 )

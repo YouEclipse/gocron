@@ -1,18 +1,18 @@
 package service
 
 import (
-    "github.com/ouqiang/gocron/models"
+    "gocron/models"
     "strconv"
     "time"
-    "github.com/ouqiang/gocron/modules/logger"
+    "gocron/modules/logger"
     "github.com/jakecoffman/cron"
     "errors"
     "fmt"
-    "github.com/ouqiang/gocron/modules/httpclient"
-    "github.com/ouqiang/gocron/modules/notify"
+    "gocron/modules/httpclient"
+    "gocron/modules/notify"
     "sync"
-    rpcClient "github.com/ouqiang/gocron/modules/rpc/client"
-    pb "github.com/ouqiang/gocron/modules/rpc/proto"
+    rpcClient "gocron/modules/rpc/client"
+    pb "gocron/modules/rpc/proto"
     "strings"
 )
 

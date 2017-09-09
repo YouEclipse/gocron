@@ -2,20 +2,20 @@ package host
 
 import (
     "gopkg.in/macaron.v1"
-    "github.com/ouqiang/gocron/models"
-    "github.com/ouqiang/gocron/modules/utils"
-    "github.com/ouqiang/gocron/modules/logger"
+    "gocron/models"
+    "gocron/modules/utils"
+    "gocron/modules/logger"
     "strconv"
-    "github.com/ouqiang/gocron/service"
+    "gocron/service"
     "github.com/Unknwon/paginater"
     "fmt"
     "html/template"
-    "github.com/ouqiang/gocron/routers/base"
+    "gocron/routers/base"
     "github.com/go-macaron/binding"
-    "github.com/ouqiang/gocron/modules/rpc/grpcpool"
+    "gocron/modules/rpc/grpcpool"
     "strings"
-    "github.com/ouqiang/gocron/modules/rpc/client"
-    "github.com/ouqiang/gocron/modules/rpc/proto"
+    "gocron/modules/rpc/client"
+    "gocron/modules/rpc/proto"
 )
 
 func Index(ctx *macaron.Context)  {

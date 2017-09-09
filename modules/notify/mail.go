@@ -1,11 +1,11 @@
 package notify
 
 import (
-    "github.com/ouqiang/gocron/models"
-    "github.com/ouqiang/gocron/modules/logger"
+    "gocron/models"
+    "gocron/modules/logger"
     "strconv"
     "strings"
-    "github.com/ouqiang/gocron/modules/utils"
+    "gocron/modules/utils"
     "time"
     "github.com/go-gomail/gomail"
 )

@@ -6,8 +6,8 @@ import (
     "time"
     "google.golang.org/grpc"
     "errors"
-    "github.com/ouqiang/gocron/modules/rpc/auth"
-    "github.com/ouqiang/gocron/modules/app"
+    "gocron/modules/rpc/auth"
+    "gocron/modules/app"
     "strings"
 )
 

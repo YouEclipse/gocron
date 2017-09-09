@@ -2,9 +2,9 @@ package manage
 
 import (
     "gopkg.in/macaron.v1"
-    "github.com/ouqiang/gocron/modules/utils"
-    "github.com/ouqiang/gocron/models"
-    "github.com/ouqiang/gocron/modules/logger"
+    "gocron/modules/utils"
+    "gocron/models"
+    "gocron/modules/logger"
     "encoding/json"
 )
 
