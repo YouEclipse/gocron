@@ -14,18 +14,17 @@ import (
 const DefaultSection = "default"
 
 type Setting struct {
-	Db struct {
-		Engine       string `split_words:"true"`
-		Host         string `split_words:"true"`
-		Port         int    `split_words:"true"`
-		User         string `split_words:"true"`
-		Password     string `split_words:"true"`
-		Database     string `split_words:"true"`
-		Prefix       string `split_words:"true"`
-		Charset      string `split_words:"true"`
-		MaxIdleConns int    `split_words:"true"`
-		MaxOpenConns int    `split_words:"true"`
-	}
+	DbEngine       string `split_words:"true"`
+	DbHost         string `split_words:"true"`
+	DbPort         int    `split_words:"true"`
+	DbUser         string `split_words:"true"`
+	DbPassword     string `split_words:"true"`
+	DbDatabase     string `split_words:"true"`
+	DbPrefix       string `split_words:"true"`
+	DbCharset      string `split_words:"true"`
+	DbMaxIdleConns int    `split_words:"true"`
+	DbMaxOpenConns int    `split_words:"true"`
+
 	AllowIps      string `split_words:"true"`
 	AppName       string `split_words:"true"`
 	ApiKey        string `split_words:"true"`
@@ -42,15 +41,15 @@ type Setting struct {
 
 func Read(cfgKey, cfgType string) (*Setting, error) {
 	if cfgType == "ini" {
-		return readIni(cfgKey)
+		return ReadIni(cfgKey)
 	} else if cfgType == "env" {
-		return readEnv(cfgKey)
+		return ReadEnv(cfgKey)
 	} else {
 		return nil, errors.New("不支持的配置类型")
 	}
 }
 
-func readIni(filename string) (*Setting, error) {
+func ReadIni(filename string) (*Setting, error) {
 	config, err := ini.Load(filename)
 	if err != nil {
 		return nil, err
@@ -59,16 +58,16 @@ func readIni(filename string) (*Setting, error) {
 
 	var s Setting
 
-	s.Db.Engine = section.Key("db.engine").MustString("mysql")
-	s.Db.Host = section.Key("db.host").MustString("127.0.0.1")
-	s.Db.Port = section.Key("db.port").MustInt(3306)
-	s.Db.User = section.Key("db.user").MustString("")
-	s.Db.Password = section.Key("db.password").MustString("")
-	s.Db.Database = section.Key("db.database").MustString("gocron")
-	s.Db.Prefix = section.Key("db.prefix").MustString("")
-	s.Db.Charset = section.Key("db.charset").MustString("utf8")
-	s.Db.MaxIdleConns = section.Key("db.max.idle.conns").MustInt(30)
-	s.Db.MaxOpenConns = section.Key("db.max.open.conns").MustInt(100)
+	s.DbEngine = section.Key("db.engine").MustString("mysql")
+	s.DbHost = section.Key("db.host").MustString("127.0.0.1")
+	s.DbPort = section.Key("db.port").MustInt(3306)
+	s.DbUser = section.Key("db.user").MustString("")
+	s.DbPassword = section.Key("db.password").MustString("")
+	s.DbDatabase = section.Key("db.database").MustString("gocron")
+	s.DbPrefix = section.Key("db.prefix").MustString("")
+	s.DbCharset = section.Key("db.charset").MustString("utf8")
+	s.DbMaxIdleConns = section.Key("db.max.idle.conns").MustInt(30)
+	s.DbMaxOpenConns = section.Key("db.max.open.conns").MustInt(100)
 
 	s.AllowIps = section.Key("allow_ips").MustString("")
 	s.AppName = section.Key("app.name").MustString("定时任务管理系统")
@@ -98,14 +97,14 @@ func readIni(filename string) (*Setting, error) {
 	return &s, nil
 }
 
-func readEnv(prefix string) (*Setting, error) {
-	logger.Debug(prefix)
+func ReadEnv(prefix string) (*Setting, error) {
+
 	var s = &Setting{}
 	err := envconfig.Process(prefix, s)
 	if err != nil {
 		logger.Debug(err)
 	}
-	logger.Debug(s.AppName)
+	logger.Debug(*s)
 	return s, err
 }
 

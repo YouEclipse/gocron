@@ -2,6 +2,7 @@ package install
 
 import (
 	"fmt"
+	"gocron/modules/logger"
 	"strconv"
 
 	"gocron/models"
@@ -17,13 +18,14 @@ import (
 // 系统安装
 
 type InstallForm struct {
-	DbType               string `binding:"In(mysql)"`
-	DbHost               string `binding:"Required;MaxSize(50)"`
-	DbPort               int    `binding:"Required;Range(1,65535)"`
-	DbUsername           string `binding:"Required;MaxSize(50)"`
-	DbPassword           string `binding:"Required;MaxSize(30)"`
-	DbName               string `binding:"Required;MaxSize(50)"`
-	DbTablePrefix        string `binding:"MaxSize(20)"`
+	DbType        string `binding:"In(mysql)"`
+	DbHost        string
+	DbPort        int
+	DbUsername    string
+	DbPassword    string
+	DbName        string `binding:"MaxSize(50)"`
+	DbTablePrefix string `binding:"MaxSize(20)"`
+	//ConfigType           string `binding:"In(ini,env)"`
 	AdminUsername        string `binding:"Required;MinSize(3)"`
 	AdminPassword        string `binding:"Required;MinSize(6)"`
 	ConfirmAdminPassword string `binding:"Required;MinSize(6)"`
@@ -31,6 +33,7 @@ type InstallForm struct {
 }
 
 func (f InstallForm) Error(ctx *macaron.Context, errs binding.Errors) {
+	logger.Debug(errs)
 	if len(errs) == 0 {
 		return
 	}
@@ -51,27 +54,37 @@ func Create(ctx *macaron.Context) {
 
 // 安装
 func Store(ctx *macaron.Context, form InstallForm) string {
+	var appConfig *setting.Setting
+	var err error
 	json := utils.JsonResponse{}
 	if app.Installed {
 		return json.CommonFailure("系统已安装!")
 	}
+	if app.AppConfigType == "env" {
+		appConfig, err = setting.ReadEnv(app.AppConfigPrefix)
+		if err != nil {
+			return json.CommonFailure("读取应用配置失败", err)
+		}
+	} else {
+		err := testDbConnection(form)
+		if err != nil {
+			return json.CommonFailure("数据库连接失败", err)
+		}
+		// 写入数据库配置
+		err = writeConfig(form)
+		if err != nil {
+			return json.CommonFailure("数据库配置写入文件失败", err)
+		}
+
+		appConfig, err = setting.ReadIni(app.AppConfig)
+		if err != nil {
+			return json.CommonFailure("读取应用配置失败", err)
+		}
+	}
 	if form.AdminPassword != form.ConfirmAdminPassword {
 		return json.CommonFailure("两次输入密码不匹配")
 	}
-	err := testDbConnection(form)
-	if err != nil {
-		return json.CommonFailure("数据库连接失败", err)
-	}
-	// 写入数据库配置
-	err = writeConfig(form)
-	if err != nil {
-		return json.CommonFailure("数据库配置写入文件失败", err)
-	}
 
-	appConfig, err := setting.Read(app.AppConfig, app.AppConfigType)
-	if err != nil {
-		return json.CommonFailure("读取应用配置失败", err)
-	}
 	app.Setting = appConfig
 
 	models.Db = models.CreateDb()
@@ -146,12 +159,12 @@ func createAdminUser(form InstallForm) error {
 // 测试数据库连接
 func testDbConnection(form InstallForm) error {
 	var s setting.Setting
-	s.Db.Engine = form.DbType
-	s.Db.Host = form.DbHost
-	s.Db.Port = form.DbPort
-	s.Db.User = form.DbUsername
-	s.Db.Password = form.DbPassword
-	s.Db.Charset = "utf8"
+	s.DbEngine = form.DbType
+	s.DbHost = form.DbHost
+	s.DbPort = form.DbPort
+	s.DbUser = form.DbUsername
+	s.DbPassword = form.DbPassword
+	s.DbCharset = "utf8"
 	db, err := models.CreateTmpDb(&s)
 	if err != nil {
 		return err

@@ -7,7 +7,7 @@ import (
     "github.com/urfave/cli"
     "os"
 
-    "github.com/ouqiang/gocron/cmd"
+    "gocron/cmd"
 )
 
 const AppVersion = "1.2.2"

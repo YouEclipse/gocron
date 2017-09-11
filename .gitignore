@@ -36,3 +36,8 @@ gocron-node.exe
 
 node_modules
 package.json
+
+.DS_Store
+.env
+gocron
+gocron-node

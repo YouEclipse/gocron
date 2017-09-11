@@ -80,11 +80,27 @@ func initModule() {
 	if !app.Installed {
 		return
 	}
+	var config = &setting.Setting{}
+	var err error
 
-	config, err := setting.Read(app.AppConfig, app.AppConfigType)
-	if err != nil {
-		logger.Fatal("读取应用配置失败", err)
+	switch app.AppConfigType {
+	case "env":
+		config, err = setting.ReadEnv(app.AppConfigPrefix)
+		if err != nil {
+			logger.Fatal("读取应用配置失败", err)
+		}
+	case "ini":
+		config, err = setting.ReadIni(app.ConfDir)
+		if err != nil {
+			logger.Fatal("读取应用配置失败", err)
+		}
+	default:
+		config, err = setting.ReadIni(app.ConfDir)
+		if err != nil {
+			logger.Fatal("读取应用配置失败", err)
+		}
 	}
+
 	app.Setting = config
 
 	// 初始化DB

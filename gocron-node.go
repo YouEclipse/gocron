@@ -4,14 +4,14 @@
 package main
 
 import (
-	"github.com/ouqiang/gocron/modules/rpc/server"
+	"gocron/modules/rpc/server"
     "flag"
     "runtime"
     "os"
     "fmt"
     "strings"
-    "github.com/ouqiang/gocron/modules/rpc/auth"
-    "github.com/ouqiang/gocron/modules/utils"
+    "gocron/modules/rpc/auth"
+    "gocron/modules/utils"
 )
 
 const AppVersion = "1.2.2"
